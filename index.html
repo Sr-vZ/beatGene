@@ -17,48 +17,20 @@
     </script>, and Electron
     <script>
         document.write(process.versions.electron)
-        //Require MIDIPlayer and MIDIFile modules
-            var MIDIPlayer = require('midiplayer');
-            var MIDIFile = require('midifile');
+        start()
+        function start() {
 
 
-            navigator.requestMIDIAccess().then(function (midiAccess) {
-                // Creating player
-                var midiPlayer = new MIDIPlayer({
-                    'output': midiAccess.outputs()[0]
-                });
+                //scribble.midi(clip, 'cscale.mid');
 
-                // creating the MidiFile instance from a buffer (view MIDIFile README)
-                var midiFile = new MIDIFile(buffer);
+                var Tone = require('Tone')
+                //create a synth and connect it to the master output (your speakers)
+                var synth = new Tone.Synth().toMaster();
 
-                // Loading the midiFile instance in the player
-                midiPlayer.load(midiFile);
+                //play a middle 'C' for the duration of an 8th note
+                synth.triggerAttackRelease("C6", "6n");
 
-                // Playing
-                midiPlayer.play(function () {
-                    console.log('Play ended');
-                });
-
-                // Volume
-                midiPlayer.volume = 80; // in percent
-
-                // Pausing
-                midiPlayer.pause();
-
-                // Resuming
-                midiPlayer.resume();
-
-                // Stopping
-                midiPlayer.stop();
-
-                // Playing again and loop
-                midiPlayer.play(function playCallback() {
-                    midiPlayer.play(playCallback);
-                });
-
-            }, function () {
-                console.log('No midi output');
-            });
+            }
 </script>.
     <audio src="./js/cscale.mid" ></audio>
     

@@ -53,3 +53,11 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here. 
+
+const scribble = require('scribbletune');
+
+let clip = scribble.clip({
+    notes: scribble.scale('c', 'major', 3), // this works too ['c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3']
+    pattern: 'x-'.repeat(8)
+});
+
