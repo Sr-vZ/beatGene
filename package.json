@@ -1,0 +1,25 @@
+{
+  "name": "beatgene",
+  "version": "0.0.1",
+  "description": "Audio Editing Web App - Beat Generator ",
+  "main": "electronLaunch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sr-vZ/beatGene.git"
+  },
+  "author": "SrvZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sr-vZ/beatGene/issues"
+  },
+  "homepage": "https://github.com/Sr-vZ/beatGene#readme",
+  "dependencies": {
+    "midifile": "^1.0.4",
+    "midiplayer": "^1.0.0",
+    "peaks.js": "^0.9.5",
+    "scribbletune": "^0.11.2"
+  }
+}

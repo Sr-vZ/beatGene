@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    We are using node
+    <script>
+        document.write(process.versions.node)
+    </script>, Chrome
+    <script>
+        document.write(process.versions.chrome)
+    </script>, and Electron
+    <script>
+        document.write(process.versions.electron)
+        //Require MIDIPlayer and MIDIFile modules
+            var MIDIPlayer = require('midiplayer');
+            var MIDIFile = require('midifile');
+
+
+            navigator.requestMIDIAccess().then(function (midiAccess) {
+                // Creating player
+                var midiPlayer = new MIDIPlayer({
+                    'output': midiAccess.outputs()[0]
+                });
+
+                // creating the MidiFile instance from a buffer (view MIDIFile README)
+                var midiFile = new MIDIFile(buffer);
+
+                // Loading the midiFile instance in the player
+                midiPlayer.load(midiFile);
+
+                // Playing
+                midiPlayer.play(function () {
+                    console.log('Play ended');
+                });
+
+                // Volume
+                midiPlayer.volume = 80; // in percent
+
+                // Pausing
+                midiPlayer.pause();
+
+                // Resuming
+                midiPlayer.resume();
+
+                // Stopping
+                midiPlayer.stop();
+
+                // Playing again and loop
+                midiPlayer.play(function playCallback() {
+                    midiPlayer.play(playCallback);
+                });
+
+            }, function () {
+                console.log('No midi output');
+            });
+</script>.
+    <audio src="./js/cscale.mid" ></audio>
+    
+</body>
+
+</html>
