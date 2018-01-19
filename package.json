@@ -24,6 +24,8 @@
     "peaks.js": "^0.9.5",
     "scribbletune": "^0.11.2",
     "synth-js": "^0.1.1",
-    "tone": "^0.11.11"
+    "tone": "^0.11.11",
+    "tracery": "^1.0.3",
+    "tracery-grammar": "^2.7.3"
   }
 }
